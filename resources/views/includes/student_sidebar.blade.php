@@ -22,11 +22,19 @@
             <i class="mdi mdi-home menu-icon"></i>
           </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/application-form">
-              <span class="menu-title text-gradient-danger">Admission form</span>
-              <i class="mdi mdi-file menu-icon"></i>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
+              <span class="menu-title">Admission</span>
+              <i class="menu-arrow"></i>
+              <i class="mdi mdi-medical-bag menu-icon"></i>
             </a>
+            <div class="collapse" id="general-pages">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/application-form">Admission form </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> View Slip </a></li>
+                
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
