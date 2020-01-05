@@ -16,8 +16,9 @@
 // });
 
 Auth::routes();
-
+Route::get('/addmission_slip','StudentsController@addmission_slip');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'PagesController@index');
 Route::resource('/student','StudentsController');
 Route::get('/application-form','StudentsController@create');
+Route::resource('/admin-index','AdminController');

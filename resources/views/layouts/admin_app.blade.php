@@ -36,13 +36,13 @@
 </head>
 <body>
     <div id="app">
-            @include('navs.admin_header')
+            @include('includes.admin_header')
          <main class="py-4" style="margin-top: 50px;">  
-             @include('navs.messages')
-            @include('navs.admin_sidebar')
+             @include('includes.messages')
+            @include('includes.admin_sidebar')
             
             @yield('admin_content')
-            @include('navs.admin_footer')
+            @include('includes.student_footer')
          </main> 
     </div>
 </body>

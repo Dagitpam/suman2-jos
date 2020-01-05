@@ -47,7 +47,7 @@
                 <div class="col-md-6">
                   <div class="form-group col-sm-12 col-md-12 col-md-12">
                     <label for="exampleInputName1">Email</label>
-                  <input type="email" class="form-control" name="email" value="{{$email}}" id="exampleInputEmail3" placeholder="Your Email">
+                  <input type="email" class="form-control " name="email" value="{{$email}}" id="exampleInputEmail3" placeholder="Your Email">
 
                   </div>
                 </div>

@@ -42,6 +42,15 @@ class StudentsController extends Controller
         $email = $userName[0]['email'];
        return view('student.addmission_form')->with('email',$email); 
     }
+    public function addmission_slip()
+    {
+        //
+
+        $email = User::where('email',Auth::User()->email)->get();
+        $id= $email[0]['id'];
+        $addmissionDetails = AddmissionForm::where('userId',$id)->get();
+       return view('student.addmission_slip')->with('addmissionDetails',$addmissionDetails); 
+    }
 
     /**
      * Store a newly created resource in storage.

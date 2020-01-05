@@ -31,7 +31,7 @@
             <div class="collapse" id="general-pages">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/application-form">Admission form </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> View Slip </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/addmission_slip"> View Slip </a></li>
                 
               </ul>
             </div>
