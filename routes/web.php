@@ -22,3 +22,9 @@ Route::get('/', 'PagesController@index');
 Route::resource('/student','StudentsController');
 Route::get('/application-form','StudentsController@create');
 Route::resource('/admin-index','AdminController');
+Route::get('/view-form','AdminController@addmissionForm');
+Route::resource('/displayAddmissionForm','AdminController');
+// paystack payment
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
+

@@ -26,6 +26,9 @@ class StudentsController extends Controller
     public function index()
     {
         //
+        // $status = AddmissionForm::where('email',Auth::User()->email)->get();
+        
+        
         return view('student.index');
     }
 
@@ -49,6 +52,7 @@ class StudentsController extends Controller
         $email = User::where('email',Auth::User()->email)->get();
         $id= $email[0]['id'];
         $addmissionDetails = AddmissionForm::where('userId',$id)->get();
+
        return view('student.addmission_slip')->with('addmissionDetails',$addmissionDetails); 
     }
 
@@ -176,4 +180,5 @@ class StudentsController extends Controller
     {
         //
     }
+  
 }

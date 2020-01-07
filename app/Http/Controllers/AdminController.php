@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\AddmissionForm;
 
 class AdminController extends Controller
 {
@@ -47,6 +48,9 @@ class AdminController extends Controller
     public function show($id)
     {
         //
+        $details = AddmissionForm::where('id',$id)->get();
+        
+        return view('admin.applicant-details')->with('details',$details);
     }
 
     /**
@@ -82,4 +86,14 @@ class AdminController extends Controller
     {
         //
     }
+    public function addmissionForm(){
+        $applicants= AddmissionForm::orderBy('created_at','desc')->paginate(4);
+    
+         return view('/admin.addmission-form')->with('applicants',$applicants);
+    }
+    // public function displayAddmissionForm($id){
+    //     $id = AddmissionForm::find($id);
+    //     $details = AddmissionForm::where('id',$id)->get();
+    //     return view('admin.applicant-details');
+    // }
 }

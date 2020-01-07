@@ -30,7 +30,7 @@
                   <img src="/storage/post_images/{{$addmissionDetails[0]['image']}}" class="rounded-circle" alt="school logo" width="70px" height="70px">
                     </div>
                     <div class="col-md-4">
-                            <span>suman{{$addmissionDetails[0]['id']}}</span>
+                           <b>Student Id:</b>&nbsp;<span>suman{{$addmissionDetails[0]['id']}}</span>
                         </div>
               </div>
               <div style="margin-left: 50px; margin-top: 50px; linespacing: 10px;">
@@ -42,9 +42,8 @@
                 <span><b>Result Type</b>:&nbsp;&nbsp;{{$addmissionDetails[0]['resultType']}}</span><br><br>
                 <span><b>State</b>:&nbsp;&nbsp;{{$addmissionDetails[0]['state']}}</span><br><br>
                 <span><b>Residential Area</b>:&nbsp;&nbsp;{{$addmissionDetails[0]['residArea']}}</span>
-  
               </div>
-                           
+                     
           </div>
 
       </div>
