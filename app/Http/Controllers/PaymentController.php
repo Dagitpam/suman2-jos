@@ -47,7 +47,7 @@ class PaymentController extends Controller
         //put this date in database
         $dateDayFinal = $dateExplode[0];
 
-        return ($dateDayFinal);
+        // return ($dateDayFinal);
         //put transaction id, transaction status, amount and date here
 
         // Now you have the payment details,
