@@ -41,9 +41,14 @@ class PaymentController extends Controller
         $transId = $paymentDetails['data']['id'];
         $transStatus = $paymentDetails['data']['status'];
         $amountNaira = $paymentDetails['data']['amount']/100;
+        $date = $paymentDetails['data']['paid_at'];
 
-        // return ($amountNaira);
-        //put transaction id, transaction status, amount here
+        $dateExplode = explode("T",$date);
+        //put this date in database
+        $dateDayFinal = $dateExplode[0];
+
+        return ($dateDayFinal);
+        //put transaction id, transaction status, amount and date here
 
         // Now you have the payment details,
         // you can store the authorization_code in your db to allow for recurrent subscriptions
