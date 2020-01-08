@@ -36,7 +36,15 @@ class PaymentController extends Controller
     {
         $paymentDetails = Paystack::getPaymentData();
 
-        dd($paymentDetails);
+        // dd($paymentDetails);
+
+        $transId = $paymentDetails['data']['id'];
+        $transStatus = $paymentDetails['data']['status'];
+        $amountNaira = $paymentDetails['data']['amount']/100;
+
+        // return ($amountNaira);
+        //put transaction id, transaction status, amount here
+
         // Now you have the payment details,
         // you can store the authorization_code in your db to allow for recurrent subscriptions
         // you can then redirect or do whatever you want
