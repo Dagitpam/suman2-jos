@@ -63,6 +63,9 @@ class PaymentController extends Controller
         $post-> amount =$amountNaira;
         $post-> date=$dateDayFinal;
         $post->save();
+
+        $payment = Payment::all();
+        return $payment;
         
 
 
