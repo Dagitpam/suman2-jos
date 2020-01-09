@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
 use App\AddmissionForm;
+use App\Course;
 
 
 class StudentsController extends Controller
@@ -42,8 +43,15 @@ class StudentsController extends Controller
         //
 
         $userName = User::where('email', Auth::user()->email)->get();
+        $course = Course::orderBy('created_at','DESC')->get();
         $email = $userName[0]['email'];
-       return view('student.addmission_form')->with('email',$email); 
+        $details = array(
+            'email' => $email,
+            'course' => $course
+
+        );
+    
+       return view('student.addmission_form')->with('details',$details); 
     }
     public function addmission_slip()
     {
