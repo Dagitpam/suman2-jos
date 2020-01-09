@@ -9,8 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Paystack;
 use App\User;
-use App\AddmissionForm;
-use App\Payment;
+use App\Invoice;
 
 class PaymentController extends Controller
 {
@@ -56,7 +55,7 @@ class PaymentController extends Controller
 
         //Insert into database
 
-        $post = new Payment();
+        $post = new Invoice();
         $post-> email = Auth::User()->email;
         $post-> transactionId =$transId;
         $post-> transactionStatus =$transStatus;
