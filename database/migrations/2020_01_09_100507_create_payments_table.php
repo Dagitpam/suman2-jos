@@ -15,15 +15,10 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->String('surName');
-            $table->String('firstName');
-            $table->String('middleName')->nullable();
             $table->String('email');
-            $table->String('course');
-            $table->String('paymentId');
-            $table->String('paymentStatus');
+            $table->String('transactionId');
             $table->String('amount');
-            $table->String('paymentDate');
+            $table->String('date');
             $table->timestamps();
         });
     }

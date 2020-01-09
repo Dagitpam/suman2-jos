@@ -8,14 +8,10 @@ class Payment extends Model
 {
     //
     protected $fillable = [
-         'surName', 
-         'firstName',
-         'middleName',
-         'email',
-         'course',
-         'paymentId',
-         'paymentStatus',
-         'amount',
-         'paymentDate',
+        'email',
+        'transactionId',
+        'transactionStatus',
+        'amount',
+        'date',
     ];
 }
