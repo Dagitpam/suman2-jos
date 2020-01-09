@@ -53,27 +53,15 @@ class PaymentController extends Controller
         // return ($dateDayFinal);
         //put transaction id, transaction status, amount and date here
 
-        $userDetails = AddmissionForm::where('email',Auth::user()->email)->get();
-
-        // return $userDetails;
-
-        $Surname = $userDetails[0]['surName'];
-        $Firstname = $userDetails[0]['firstName'];
-        $Middlename = $userDetails[0]['middleName'];
-        $course = $userDetails[0]['course'];
 
         //Insert into database
 
         $post = new Payment();
-        $post-> surName =$Surname;
-        $post-> firstName =$Firstname;
-        $post-> middleName =$Middlename;
-        $post-> email =Auth::user()->email;
-        $post-> course =$course;
-        $post-> paymentId =$transId;
-        $post-> paymentStatus =$transStatus;
+        $post-> email = Auth::User()->email;
+        $post-> transactionId =$transId;
+        $post-> transactionStatus =$transStatus;
         $post-> amount =$amountNaira;
-        $post-> paymentDate=$dateDayFinal;
+        $post-> date=$dateDayFinal;
         $post->save();
 
         $payment = Payment::all();
