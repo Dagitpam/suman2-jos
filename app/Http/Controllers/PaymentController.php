@@ -54,6 +54,9 @@ class PaymentController extends Controller
         //put transaction id, transaction status, amount and date here
 
         $userDetails = AddmissionForm::where('email',Auth::user()->email)->get();
+
+        // return $userDetails;
+
         $Surname = $userDetails[0]['surName'];
         $Firstname = $userDetails[0]['firstName'];
         $Middlename = $userDetails[0]['middleName'];
@@ -65,13 +68,16 @@ class PaymentController extends Controller
         $post-> surName =$Surname;
         $post-> firstName =$Firstname;
         $post-> middleName =$Middlename;
-        $post-> email =$userDetails;
+        $post-> email =Auth::user()->email;
         $post-> course =$course;
         $post-> paymentId =$transId;
         $post-> paymentStatus =$transStatus;
         $post-> amount =$amountNaira;
         $post-> paymentDate=$dateDayFinal;
         $post->save();
+
+        $payment = Payment::all();
+        return $payment;
         
 
 
