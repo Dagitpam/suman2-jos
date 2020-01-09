@@ -22,6 +22,15 @@ Route::get('/', 'PagesController@index');
 Route::resource('/student','StudentsController');
 Route::get('/application-form','StudentsController@create');
 Route::resource('/admin-index','AdminController');
+Route::resource('/updateCourse','AdminController');
+Route::resource('/deleteCourse','AdminController');
+Route::get('/school','AdminController@schoolView');
+Route::post('/schoolAdd','AdminController@schoolAdd');
+Route::get('/department','AdminController@departmentView');
+Route::post('/departmentAdd', 'AdminController@departmentAdd');
+Route::get('/course','AdminController@courseView');
+Route::post('/courseAdd', 'AdminController@courseAdd');
+Route::post('/editCourse','AdminController@selectCourse');
 Route::get('/view-form','AdminController@addmissionForm');
 Route::resource('/displayAddmissionForm','AdminController');
 // paystack payment

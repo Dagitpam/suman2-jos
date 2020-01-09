@@ -92,8 +92,12 @@ class StudentsController extends Controller
     
         if (count($ids) > 0) {
         
-        return redirect('/application-form')->with('error','Sorry You can not apply again!');
-        }else {
+        return redirect('/application-form')->with('error','Sorry, You can not apply again!');
+        }
+        else if ($request->input('state') == '---Click & Choose---' || $request->input('resultType') == '---Click & Choose---' || $request->input('gender') == '---Click & Choose---' || $request->input('course') == '---Click & Choose---' || $request->input('sponsore') == '---Click & Choose---') {
+            return back()->with('error','Sorry, yet to choose field(s)!');
+         } 
+        else {
             
           //Handle file upload
           if ($request->hasFile('image')) {

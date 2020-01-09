@@ -50,9 +50,9 @@
           </a>
           <div class="collapse" id="general-pages">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="#">Schools/Faculties</a></li>
-              <li class="nav-item"> <a class="nav-link" href="#">Departments</a></li>
-              <li class="nav-item"> <a class="nav-link" href="#">Course Combinations</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/school">Schools/Faculties</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/department">Departments</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/course">Course Combinations</a></li>
               <li class="nav-item"> <a class="nav-link" href="#">Updates</a></li>
             </ul>
           </div>
