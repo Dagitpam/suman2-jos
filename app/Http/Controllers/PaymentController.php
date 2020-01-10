@@ -26,7 +26,7 @@ class PaymentController extends Controller
         $request->amount = '10000';
         $request->reference = Paystack::genTranxRef();
         $request->key = config('paystack.secretkey');
-
+    
         return Paystack::getAuthorizationUrl()->redirectNow();
     }
 
@@ -38,7 +38,7 @@ class PaymentController extends Controller
     {
         $paymentDetails = Paystack::getPaymentData();
 
-        // dd($paymentDetails);
+         dd($paymentDetails);
 
         $transId = $paymentDetails['data']['id'];
         $transStatus = $paymentDetails['data']['status'];
@@ -63,7 +63,8 @@ class PaymentController extends Controller
         $post-> date=$dateDayFinal;
         $post->save();
 
-        $payment = Payment::all();
+        $payment = Invoice::all();
+        
         return $payment;
         
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Update;
 
 class PagesController extends Controller
 {
@@ -15,7 +16,9 @@ class PagesController extends Controller
     public function index()
     {
         //
-        return view('pages.index');
+        $posts = Update::orderBy('created_at','DESC');
+    
+        return view('pages.index')->with('posts',$posts);
     }
 
     /**
@@ -82,5 +85,8 @@ class PagesController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function displayUpdate(){
+
     }
 }
