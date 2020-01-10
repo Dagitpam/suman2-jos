@@ -53,7 +53,7 @@
               <li class="nav-item"> <a class="nav-link" href="/school">Schools/Faculties</a></li>
               <li class="nav-item"> <a class="nav-link" href="/department">Departments</a></li>
               <li class="nav-item"> <a class="nav-link" href="/course">Course Combinations</a></li>
-              <li class="nav-item"> <a class="nav-link" href="#">Updates</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/updateView">Updates</a></li>
             </ul>
           </div>
         </li>

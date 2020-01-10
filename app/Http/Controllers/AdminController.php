@@ -7,7 +7,7 @@ use App\AddmissionForm;
 use App\School;
 use App\Department;
 use App\Course;
-
+use App\Update;
 class AdminController extends Controller
 {
     /**
@@ -178,7 +178,7 @@ class AdminController extends Controller
         $details = array(
             'schoolDetails' => $schoolDetails,
             'departmentDetails' => $departmentDetails,
-            'courseDetails' => $courseDetails
+            'courseDetails' => $courseDetails,
         );
 
         return view('admin.course')->with('details', $details);
@@ -223,5 +223,22 @@ class AdminController extends Controller
        // $msg = $name;
 
         return response()->json($results, 200);
+    }
+
+    //updates view page
+    public function updatesView(){
+
+        $posts = Update::orderBy('created_at','DESC')->paginate(20);
+        return view('admin.upload')->with('posts',$posts);
+    }
+    //Upload notification
+    public function updatesAdd(Request $request){
+        $this->validate($request,[
+            'post'=>'required',
+        ]);
+        $post = new Update();
+        $post-> post=$request->input('post');
+        $post->save();
+        return back()->with('success','Post added successfully!');
     }
 }

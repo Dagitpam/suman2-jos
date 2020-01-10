@@ -32,6 +32,8 @@ Route::get('/course','AdminController@courseView');
 Route::post('/courseAdd', 'AdminController@courseAdd');
 Route::post('/editCourse','AdminController@selectCourse');
 Route::get('/view-form','AdminController@addmissionForm');
+Route::get('/updateView','AdminController@updatesView');
+Route::post('/updatesAdd','AdminController@updatesAdd');
 Route::resource('/displayAddmissionForm','AdminController');
 // paystack payment
 Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
